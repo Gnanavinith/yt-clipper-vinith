@@ -1,0 +1,54 @@
+/* Google Fonts must come BEFORE the tailwind import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Montserrat:wght@700;800;900&family=Anton&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* App UI: body text, buttons, forms */
+  --font-sans: "Inter", "Noto Sans Tamil", ui-sans-serif, system-ui, sans-serif;
+
+  /* Headings and logo */
+  --font-display: "Plus Jakarta Sans", "Noto Sans Tamil", ui-sans-serif, sans-serif;
+
+  /* Timestamps, durations, job IDs */
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* Caption style presets (used by the StylePicker preview) */
+  --font-caption-clean: "Poppins", "Noto Sans Tamil", sans-serif;
+  --font-caption-bold: "Montserrat", "Noto Sans Tamil", sans-serif;
+  --font-caption-impact: "Anton", "Noto Sans Tamil", sans-serif;
+  --font-caption-tall: "Bebas Neue", "Noto Sans Tamil", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #0b0b0f;
+    color: #e8e8ee;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  code, kbd, .tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Tamil needs a bit more line height, or the vowel marks get clipped */
+  :lang(ta) {
+    font-family: "Noto Sans Tamil", var(--font-sans);
+    line-height: 1.7;
+  }
+}

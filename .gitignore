@@ -1,0 +1,24 @@
+# --- Backend (Python/FastAPI) ---
+backend/venv/
+backend/.venv/
+backend/storage/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/.env.local
+
+# --- Frontend (React/Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.vite/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Misc ---
+*.log
+.env
