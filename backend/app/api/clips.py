@@ -83,6 +83,8 @@ def update_clip(clip_id: str, payload: ClipUpdate):
         re_render = True
     if payload.end_time is not None and payload.end_time != cr["end_time"]:
         re_render = True
+    if payload.caption_style is not None and payload.caption_style != cr["caption_style"]:
+        re_render = True
     if payload.subtitles is not None:
         subtitles_json = json.dumps([s.dict() for s in payload.subtitles])
         re_render = True
